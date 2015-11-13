@@ -5,6 +5,7 @@ class PersonController {
     def index() {
         def people= Person.list([sort:"lastName"])
         [people:people]
+
     }
 
     def newPersonForm(){
@@ -12,9 +13,12 @@ class PersonController {
     }
 
     def createPerson(){
-        def p = new Person(params)
-        p.save()
-        redirect(action: "index")
+        def person = new Person(params)
+        if (person.save()) {
+            redirect(action:"index")
+        } else {
+            render(view:"newPersonForm",model:[person:person])
+        }
     }
 
     def deletePerson(){
@@ -22,7 +26,7 @@ class PersonController {
     }
 
     def delete(){
-        def p = Person.get(params)
+        def p = Person.get(id)
         p.delete()
         redirect(action: "index")
     }

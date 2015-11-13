@@ -1,8 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
   User: Steve
-  Date: 11/11/2015
-  Time: 7:57 PM
 --%>
 
 <%@ page import="lab4.Person" contentType="text/html;charset=UTF-8" %>
@@ -20,16 +18,26 @@
     <table>
         <tr>
             <td>First Name</td>
+            <td>Middle Initial</td>
             <td>Last Name</td>
             <td>Gender</td>
+            <td>Age</td>
+            <td>Graduation Date</td>
+            <td>Max Deadlift</td>
+            <td>Super Power</td>
             <td>Delete?</td>
         </tr>
         <g:each var="person" in="${people}">
             <tr>
                 <td>${person.firstName}</td>
+                <td>${person.middleInitial}</td>
                 <td>${person.lastName}</td>
                 <td>${person.gender}</td>
-                <td><g:form action="deletePerson"><g:hiddenField name="id" value="${person.getId()}"/><g:link action="deletePerson">Delete</g:link>  </g:form></td>
+                <td>${person.age}</td>
+                <td>${person.gradDate}</td>
+                <td>${person.maxDeadlift}</td>
+                <td>${person.superPower}</td>
+                <td><g:form action="deletePerson"><g:hiddenField name="person" value="${person}"/></g:form><g:link action="deletePerson">Delete</g:link>  </td>
             </tr>
         </g:each>
     </table>
