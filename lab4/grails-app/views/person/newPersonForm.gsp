@@ -25,7 +25,7 @@
     Last name <g:textField name="lastName" value="${fieldValue(bean: person, field: 'lastName')}"/><br/>
     Gender <g:select name="gender" from="${["m", "f"]}" value="${fieldValue(bean: person, field: 'gender')}"/><br/>
     Age: <g:textField name="age" value="${fieldValue(bean: person, field: 'age')}"/><br/>
-    Max Deadlift: <g:textField name="maxDeadlift" value="${fieldValue(bean: person, field: 'maxDeadlift')}"/><br/>
+    Max Deadlift: <g:textField name="maxDeadlift" value="${fieldValue(bean: person, field: 'maxDeadlift')}"/><g:select name="weightType" from="${["lbs", "kg"]}" value="${fieldValue(bean: person, field: 'weightType')}"/><br/>
     Graduation Date: <g:textField name="gradDate" value="${fieldValue(bean: person, field: 'gradDate')}"/><br/>
     Super Power: <g:textField name="superPower" value="${fieldValue(bean: person, field: 'superPower')}"/><br/>
     <g:submitButton name="Submit"/>

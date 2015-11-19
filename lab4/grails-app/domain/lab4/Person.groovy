@@ -6,7 +6,8 @@ class Person {
     String gender
     String middleInitial
     Integer age
-    String maxDeadlift
+    Integer maxDeadlift
+    String weightType
     String gradDate
     String superPower
     League league
@@ -23,6 +24,5 @@ class Person {
         superPower blank: false
         league nullable: true
     }
-
 
 }

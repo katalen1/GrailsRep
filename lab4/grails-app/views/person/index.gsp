@@ -35,9 +35,9 @@
                 <td>${person.gender}</td>
                 <td>${person.age}</td>
                 <td>${person.gradDate}</td>
-                <td>${person.maxDeadlift}</td>
+                <td>${person.maxDeadlift}${person.weightType}</td>
                 <td>${person.superPower}</td>
-                <td><g:form action="deletePerson"><g:hiddenField name="person" value="${person}"/></g:form><g:link action="deletePerson">Delete</g:link>  </td>
+                <td><g:form action="deletePerson"><g:hiddenField name="id" id="${person.firstName}" value="${person.firstName}"/></g:form><g:link action="deletePerson">Delete</g:link>  </td>
             </tr>
         </g:each>
     </table>

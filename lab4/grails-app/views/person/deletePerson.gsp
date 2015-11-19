@@ -11,7 +11,7 @@
 
 <body>
 <h1>Are you sure you want to delete this person?</h1>
-<g:form><g:hiddenField name="id" value="${person.id}"/>
+<g:form><g:hiddenField name="id" value="${params.id}"/>
 <g:actionSubmit value="Yes" action="delete"/>
 <g:actionSubmit value="No" action="index" />
 </g:form>
