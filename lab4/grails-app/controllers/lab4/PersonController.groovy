@@ -22,15 +22,15 @@ class PersonController {
     }
 
     def deletePerson(){
-        def id = params.id
-        [id:id]
+        def id = params       //java.lang.IllegalArgumentException when first line of delete ran -def p
+        //def id = params.id           //same as below
+        //def id = params.getIdentifier() //same as below
+        //def id = params.long('id')  //no error but does not delete
         flash.id = id
     }
 
     def delete(){
-        def id = flash.id //null
-        [id:id]
-        def p = Person.get(id)
+        def p = Person.get(flash.id)
         p.delete()
         redirect(action: "index")
     }

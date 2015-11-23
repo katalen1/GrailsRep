@@ -25,6 +25,7 @@
             <td>Graduation Date</td>
             <td>Max Deadlift</td>
             <td>Super Power</td>
+            <td>ID</td>
             <td>Delete?</td>
         </tr>
         <g:each var="person" in="${people}">
@@ -37,7 +38,8 @@
                 <td>${person.gradDate}</td>
                 <td>${person.maxDeadlift}${person.weightType}</td>
                 <td>${person.superPower}</td>
-                <td><g:form action="deletePerson"><g:hiddenField name="id" id="${person.firstName}" value="${person.firstName}"/></g:form><g:link action="deletePerson">Delete</g:link>  </td>
+                <td>${person.id}</td>
+                <td><g:form action="deletePerson"><g:hiddenField name="id" value="${person.id}"/></g:form><g:link action="deletePerson" id="${person.id}">Delete</g:link>  </td>
             </tr>
         </g:each>
     </table>
