@@ -12,7 +12,10 @@ class LeagueController {
     }
 
     def createLeague(){
-        def league = new League(params)
+        def league = new League([name:params.name])
+        params.members.each {
+            league.addToMembers(Person.get(it as Long))
+        }
         if (league.save()) {
             redirect(action:"index")
         } else {
@@ -21,7 +24,10 @@ class LeagueController {
     }
 
     def view(){
-        //get league based of id of selected league
-        //assign league name and members
+        def id = params.long('id')
+        def league = League.get(id)
+        league.delete(flush: true)
+        //def lmembers = league.members.list()
+        //[lmembers:lmembers]
     }
 }

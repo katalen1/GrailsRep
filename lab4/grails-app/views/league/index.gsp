@@ -22,8 +22,9 @@
         </tr>
         <g:each var="league" in="${leagues}">
             <tr>
-                <td>${league.name}</td>
+                <td><g:hiddenField action="view" name="id" value="${league.id}"/><g:link action="view">${league.name}</g:link></td>
                 <td>${league.members.size()}</td>
+                <td>${league.id}</td>
             </tr>
         </g:each>
     </table>

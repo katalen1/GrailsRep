@@ -28,6 +28,7 @@
     Max Deadlift: <g:textField name="maxDeadlift" value="${fieldValue(bean: person, field: 'maxDeadlift')}"/><g:select name="weightType" from="${["lbs", "kg"]}" value="${fieldValue(bean: person, field: 'weightType')}"/><br/>
     Graduation Date: <g:textField name="gradDate" value="${fieldValue(bean: person, field: 'gradDate')}"/><br/>
     Super Power: <g:textField name="superPower" value="${fieldValue(bean: person, field: 'superPower')}"/><br/>
+    Super Hero League <g:select name="league" optionValue="name" optionKey="id" from="${lab4.League.list()}" noSelection="${['null':'-none-']}"/><br/>
     <g:submitButton name="Submit"/>
 
 </g:form>

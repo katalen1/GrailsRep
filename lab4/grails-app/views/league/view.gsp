@@ -11,8 +11,10 @@
 
 <body>
 
-//print league name
-//for each member print member name
-
+${league.name}
+<g:each var="member" in="${lmembers}">
+    ${member.firstName}<br/>
+    ${member.lastName}<br/>
+</g:each>
 </body>
 </html>

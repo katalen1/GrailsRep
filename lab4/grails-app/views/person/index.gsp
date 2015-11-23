@@ -39,7 +39,7 @@
                 <td>${person.maxDeadlift}${person.weightType}</td>
                 <td>${person.superPower}</td>
                 <td>${person.id}</td>
-                <td><g:form action="deletePerson"><g:hiddenField name="id" value="${person.id}"/></g:form><g:link action="deletePerson" id="${person.id}">Delete</g:link>  </td>
+                <td><g:form action="deletePerson"><g:hiddenField action="deletePerson" name="id" value="${person.id}"/></g:form><g:link action="deletePerson" id="${person.id}">Delete</g:link>  </td>
             </tr>
         </g:each>
     </table>
